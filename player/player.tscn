@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://duhrr3q0ixxn8"]
+
+[ext_resource type="Texture2D" uid="uid://bark052a0wexr" path="res://img/ninja1.png" id="1_cmg38"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="2_hrs4j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oo0wx"]
+radius = 15.0333
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_hrs4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_oo0wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_cmg38")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
