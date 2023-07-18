@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://btjmqsijm2ksx"]
+
+[ext_resource type="Texture2D" uid="uid://gt6eheusghpa" path="res://img/enemyninja.png" id="1_ealve"]
+[ext_resource type="Script" path="res://scripts/EnemyNinja.cs" id="1_nhvlk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfqto"]
+radius = 15.0
+
+[node name="EnemyNinja" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_nhvlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_lfqto")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ealve")
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(-16, 0)
+target_position = Vector2(0, 18)
+
+[node name="RayCast2DRight" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(16, 0)
+target_position = Vector2(0, 18)
+metadata/_edit_group_ = true

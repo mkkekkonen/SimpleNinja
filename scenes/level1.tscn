@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8k6xcoj1abr4"]
+[gd_scene load_steps=4 format=3 uid="uid://b8k6xcoj1abr4"]
 
 [ext_resource type="TileSet" uid="uid://hswsyc5odv3l" path="res://tilesets/tileset.tres" id="1_xyooi"]
 [ext_resource type="PackedScene" uid="uid://duhrr3q0ixxn8" path="res://player/player.tscn" id="2_wgpm7"]
+[ext_resource type="PackedScene" uid="uid://btjmqsijm2ksx" path="res://enemies/enemy_ninja.tscn" id="3_hvalk"]
 
 [node name="Level1" type="Node2D"]
 
@@ -20,3 +21,6 @@ layer_1/tile_data = PackedInt32Array(983044, 65536, 0, 983045, 65536, 0, 983046,
 
 [node name="Player" parent="." instance=ExtResource("2_wgpm7")]
 position = Vector2(85, 119)
+
+[node name="EnemyNinja" parent="." instance=ExtResource("3_hvalk")]
+position = Vector2(355, 249)
