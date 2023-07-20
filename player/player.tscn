@@ -7,6 +7,7 @@
 radius = 15.0333
 
 [node name="Player" type="Node2D"]
+metadata/_edit_group_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_hrs4j")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bayn62xuanr4t"]
+
+[ext_resource type="Texture2D" uid="uid://cd8ukou8ovokp" path="res://img/ammo3.png" id="1_16ura"]
+[ext_resource type="Script" path="res://scripts/PlayerShot.cs" id="1_kyyv4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsj8c"]
+radius = 4.12311
+
+[node name="PlayerShot" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+script = ExtResource("1_kyyv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("CircleShape2D_wsj8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_16ura")
