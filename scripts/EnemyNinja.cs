@@ -1,12 +1,15 @@
-using Godot;
-using System;
+// Maybe move this global using to some kind of Global.cs or GameManager.cs script
+// later on
+global using Godot;
+
+namespace SimpleNinja;
 
 public partial class EnemyNinja : CharacterBody2D
 {
-  public const float Speed = 150.0f;
-  public const float JumpVelocity = -400.0f;
+  public const float SPEED = 150.0f;
+  public const float JUMP_VELOCITY = -400.0f;
 
-  public Vector2 Direction = new Vector2(1, 0);
+  public Vector2 Direction = new(1, 0);
 
   // Get the gravity from the project settings to be synced with RigidBody nodes.
   public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -41,11 +44,11 @@ public partial class EnemyNinja : CharacterBody2D
     // As good practice, you should replace UI actions with custom gameplay actions.
     if (Direction != Vector2.Zero)
     {
-      velocity.X = Direction.X * Speed;
+      velocity.X = Direction.X * SPEED;
     }
     else
     {
-      velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+      velocity.X = Mathf.MoveToward(Velocity.X, 0, SPEED);
     }
 
     Velocity = velocity;

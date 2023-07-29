@@ -1,5 +1,4 @@
-using Godot;
-using System;
+namespace SimpleNinja;
 
 public partial class Player : CharacterBody2D
 {
